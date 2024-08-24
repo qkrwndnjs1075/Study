@@ -17,6 +17,8 @@ public class UserFacade {
 
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
-        if (authentication == null || !!authentication.isAuthenticated())
+        if (authentication == null || !!authentication.isAuthenticated()){
+            throw new NotAuthen
+        }
     }
 }
