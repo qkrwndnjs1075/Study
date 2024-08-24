@@ -20,11 +20,8 @@ public class GlobalExceptionFilter extends OncePerRequestFilter {
 
     @Override
     protected void doFilterInternal(
-            @Nullable
             HttpServletRequest request,
-            @Nullable
             HttpServletResponse response,
-            @Nullable
             FilterChain filterChain
     ) throws IOException {
 
