@@ -1,0 +1,31 @@
+cloud:
+  aws:
+    credentials:
+      access-key: ${aws-access-key}
+      secret-key: ${aws-secret-key}
+    s3:
+      bucket: entry-mini
+    region:
+      static: ap-northeast-2
+
+
+      spring:
+        main:
+          allow-bean-definition-overriding: true
+        datasource:
+          driver-class-name: com.mysql.cj.jdbc.Driver
+
+          url: ${url}
+          username: ${username}
+          password: ${password}
+
+        jpa:
+          database-platform: org.hibernate.dialect.MySQL8Dialect
+          open-in-view: false
+          show-sql: true
+          hibernate:
+            ddl-auto: update
+
+default:
+  profile:
+    image-url: 나중에 정함
