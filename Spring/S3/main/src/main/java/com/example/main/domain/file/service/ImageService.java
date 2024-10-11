@@ -21,6 +21,7 @@ public class ImageService {
     private final FileUploadService fileUploadService;
     private final FileDeleteService fileDeleteService;
 
+
     @Transactional
     public String saveImage(MultipartFile multipartFile, ImageType imageType){
         String originalFilename = multipartFile.getOriginalFilename();
@@ -36,6 +37,16 @@ public class ImageService {
 
     }
 
+    @Transactional
+    public void deleteImage(String url){
+
+        final var key = url.substring(awsS3Properties.url().length());
+
+        fileDeleteService.deleteKey(key);
+
+    }
+
+
     public boolean isValidExtension(String contains){
         return TYPE_PHOTO.contains(contains);
     }
@@ -43,11 +54,6 @@ public class ImageService {
     public String getExtension(String filename){
         return filename.substring(filename.lastIndexOf(".")).toLowerCase();
     }
-
-    /*public String generateFile(ImageType imageType){
-        String folder = imageType == ImageType.profile ? awsS3Properties.profileFolder() : awsS3Properties.blogFolder(){
-            return folder + "|" + UUID.randomUUID();
-        }*/
 
     public String generateFile(ImageType imageType){
         String folder = null;
