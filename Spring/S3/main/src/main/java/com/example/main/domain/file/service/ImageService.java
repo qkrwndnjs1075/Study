@@ -59,7 +59,6 @@ public class ImageService {
         String folder = null;
 
         switch (imageType) {
-            case profile -> folder = awsS3Properties.profileFolder();
             case BLOG_IMAGE -> folder = awsS3Properties.blogFolder();
         }
         return folder + "/" + UUID.randomUUID();
