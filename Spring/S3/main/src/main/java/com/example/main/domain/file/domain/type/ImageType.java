@@ -1,6 +1,6 @@
 package com.example.main.domain.file.domain.type;
 
 public enum ImageType {
-    profile,
+    //profile,
     BLOG_IMAGE
 }
