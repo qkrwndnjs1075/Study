@@ -12,7 +12,6 @@ cloud:
         s3:
           url: https://entry-mini.s3.ap-northeast-2.amazonaws.com
           bucket: entry-mini
-          profile-folder: profileFolder
           blog-folder: blogFolder
 
 
@@ -22,9 +21,9 @@ cloud:
         datasource:
           driver-class-name: com.mysql.cj.jdbc.Driver
 
-          url: ${url}
-          username: ${username}
-          password: ${password}
+          url: jdbc:mysql://localhost:3306/s3
+          username: root
+          password: 1234
 
         jpa:
           database-platform: org.hibernate.dialect.MySQL8Dialect
@@ -35,4 +34,4 @@ cloud:
 
 default:
   profile:
-    image-url: 나중에 정함
+    image-url: C:\Users\user\Pictures\338.jpg
