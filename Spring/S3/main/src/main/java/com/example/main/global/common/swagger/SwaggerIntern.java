@@ -1,4 +1,4 @@
-package com.example.main.global.common.swagger;
+/*package com.example.main.global.common.swagger;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -25,7 +25,7 @@ public interface SwaggerIntern {
             ),
             @ApiResponse(
                     responseCode = "404",
-                    description = "인턴을 조회할 수 없습니다.",
+                    description = "인턴 지원 목록을 조회할 수 없습니다.",
                     content = @Content(
                             mediaType = MediaType.APPLICATION_JSON_VALUE,
                             schema = @Schema(
@@ -42,3 +42,4 @@ public interface SwaggerIntern {
     // dto ( 쓰고 ) ex) internResponse getInterResponse(String internId)
 
 }
+*/
