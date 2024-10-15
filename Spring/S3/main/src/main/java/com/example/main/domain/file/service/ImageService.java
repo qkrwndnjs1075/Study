@@ -11,7 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.util.Set;
 import java.util.UUID;
 
-@Component
+@Service
 @RequiredArgsConstructor
 public class ImageService {
 
@@ -46,6 +46,11 @@ public class ImageService {
 
     }
 
+
+
+    public String getFileBaseUrl() {
+        return awsS3Properties.url();
+    }
 
     public boolean isValidExtension(String contains){
         return TYPE_PHOTO.contains(contains);
