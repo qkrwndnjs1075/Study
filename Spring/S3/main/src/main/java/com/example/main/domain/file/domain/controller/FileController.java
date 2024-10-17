@@ -11,14 +11,14 @@ import org.springframework.web.multipart.MultipartFile;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/file")
-public class FileController {
+public class FileController{
 
     private final ImageService imageService;
 
     @PostMapping("/image")
     FileResponse uploadImage(@RequestPart("file") MultipartFile multipartFile, @RequestParam("type") ImageType imagetype){
         String path = imageService.saveImage(multipartFile, imagetype);
-        return new FileResponse(imageService.getFileBaseUrl() +path, multipartFile.getOriginalFilename());
+        return new FileResponse(imageService.getFileBaseUrl() + path, multipartFile.getOriginalFilename());
     }
 
 }
