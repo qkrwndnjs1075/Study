@@ -1,7 +1,5 @@
-    /*package com.example.main.domain.file.domain;
-
-    import org.springframework.boot.context.properties.ConfigurationProperties;
+package com.example.main.domain.file.domain;
 
 
-    public record ImageProperties(String ImageUrl) {
-    }*/
+public record ImageProperties(String ImageUrl) {
+}
