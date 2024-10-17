@@ -34,7 +34,11 @@ public class ImageService {
 
             return key;
 
+    }
 
+
+    public String getFileBaseUrl() {
+        return awsS3Properties.url();
     }
 
     @Transactional
@@ -48,23 +52,22 @@ public class ImageService {
 
 
 
-    public String getFileBaseUrl() {
-        return awsS3Properties.url();
-    }
 
-    public boolean isValidExtension(String contains){
+
+    private boolean isValidExtension(String contains){
         return TYPE_PHOTO.contains(contains);
     }
 
-    public String getExtension(String filename){
+    private String getExtension(String filename){
         return filename.substring(filename.lastIndexOf(".")).toLowerCase();
     }
 
-    public String generateFile(ImageType imageType){
-        String folder = null;
+    private String generateFile(ImageType imageType){
+        String folder;
 
         switch (imageType) {
             case BLOG_IMAGE -> folder = awsS3Properties.blogFolder();
+            default -> throw new IllegalStateException("Unexpected value: " + imageType);
         }
         return folder + "/" + UUID.randomUUID();
     }
