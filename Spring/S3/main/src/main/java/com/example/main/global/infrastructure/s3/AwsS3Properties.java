@@ -6,7 +6,6 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 public record AwsS3Properties (
         String bucket,
         String url,
-        String profileFolder,
         String blogFolder
 )
 {
