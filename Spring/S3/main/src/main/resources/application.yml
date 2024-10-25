@@ -17,6 +17,10 @@ aws:
    blog-folder: blogFolder
 
 
+jackson:
+  property-naming-strategy: SNAKE_CASE
+
+
 spring:
   main:
     allow-bean-definition-overriding: true
