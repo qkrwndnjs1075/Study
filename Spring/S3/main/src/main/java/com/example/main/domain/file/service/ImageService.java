@@ -30,6 +30,8 @@ public class ImageService {
         }
             String key = generateFile(imageType);
 
+
+
             fileUploadService.uploadFile(multipartFile, key);
 
             return key;
@@ -49,8 +51,6 @@ public class ImageService {
         fileDeleteService.deleteKey(key);
 
     }
-
-
 
 
 
