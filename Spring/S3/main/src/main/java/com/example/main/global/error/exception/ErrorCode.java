@@ -25,7 +25,7 @@ public enum ErrorCode {
     INTERNAL_SERVER_ERROR(500, "서버 탓일 수도 있고.."),
 
     //s3
-    NOT_AUTHORIZE(401, "인증이 안 된다.."),
+    FAIL_FILE(500, "파일 업로드 실패"),
 
     // key
     INVALID_KEY(401, "잘못된 key입니다.");
