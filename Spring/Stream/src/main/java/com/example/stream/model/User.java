@@ -10,7 +10,7 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
-@Accessors
+@Accessors(chain = true)
 public class User {
 
     private int id;
