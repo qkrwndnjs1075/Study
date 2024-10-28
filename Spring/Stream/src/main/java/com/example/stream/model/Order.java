@@ -15,7 +15,7 @@ import java.util.List;
 @Accessors(chain = true)
 public class Order {
 
-    private Long id;
+    private long id;
     private LocalDateTime createAt;
     private long createByUserId;
     private OrderStatus status;
