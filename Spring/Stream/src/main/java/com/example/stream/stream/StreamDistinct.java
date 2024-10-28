@@ -1,4 +1,4 @@
-package com.example.stream;
+package com.example.stream.stream;
 
 import com.example.stream.model.Order;
 
