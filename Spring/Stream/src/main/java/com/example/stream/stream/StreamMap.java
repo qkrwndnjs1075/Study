@@ -1,5 +1,6 @@
 package com.example.stream.stream;
 
+import com.example.stream.model.Order;
 import com.example.stream.model.User;
 
 import java.util.Arrays;
@@ -37,6 +38,31 @@ public class StreamMap {
                 .setVerified(true)
                 .setEmailAddress("charlie@gmail.com");
 
-        List<User> users = Arrays.asList(user1,user2,user3)
+        List<User> users = Arrays.asList(user1,user2,user3);
+        List<String> userEmailList = users.stream()
+                .map(User::getEmailAddress)
+                .toList();
+        System.out.println(userEmailList);
+
+        Order order1 = new Order()
+                .setId(1001)
+                .setStatus(Order.OrderStatus.CREATED)
+                .setCreateByUserId(101);
+        Order order2 = new Order()
+                .setId(1002)
+                .setStatus(Order.OrderStatus.ERROR)
+                .setCreateByUserId(103);
+        Order order3 = new Order()
+                .setId(1003)
+                .setStatus(Order.OrderStatus.PROCESSED)
+                .setCreateByUserId(102);
+        Order order4 = new Order()
+                .setId(1004)
+                .setStatus(Order.OrderStatus.ERROR)
+                .setCreateByUserId(104);
+        Order order5 = new Order()
+                .setId(1005)
+                .setStatus(Order.OrderStatus.IN_PROGRESS)
+                .setCreateByUserId(101);
     }
 }
