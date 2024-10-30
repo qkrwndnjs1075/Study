@@ -64,5 +64,12 @@ public class StreamMap {
                 .setId(1005)
                 .setStatus(Order.OrderStatus.IN_PROGRESS)
                 .setCreateByUserId(101);
+
+        List<Order> orders = Arrays.asList(order1,order2,order3,order4,order5);
+        List<Long> usersId = orders.stream()
+                .map(Order::getCreateByUserId)
+                .collect(Collectors.toList());
+        
+        System.out.println(usersId);
     }
 }
