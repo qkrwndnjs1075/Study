@@ -37,6 +37,6 @@ public class StreamMap {
                 .setVerified(true)
                 .setEmailAddress("charlie@gmail.com");
 
-        
+        List<User> users = Arrays.asList(user1,user2,user3)
     }
 }
