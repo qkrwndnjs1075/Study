@@ -69,7 +69,7 @@ public class StreamMap {
         List<Long> usersId = orders.stream()
                 .map(Order::getCreateByUserId)
                 .collect(Collectors.toList());
-        
+
         System.out.println(usersId);
     }
 }
