@@ -8,15 +8,13 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
 @Getter
-
-@RequiredArgsConstructor
 public class WebSocketMessage {
 
     private final WebSocketMessageType type;
     private final ChatDto payload;
 
     @JsonCreator
-    public webSocketMessage(
+    public WebSocketMessage(
             @JsonProperty("type") WebSocketMessageType type,
             @JsonProperty("payload") ChatDto payload){
         this.type = type;
