@@ -25,7 +25,6 @@ public class RedisConfig {
         return container;
     }
 
-
     /**
      * Redis에 대한 기본적인 연결과 통신을 담당하는 클래스
      * @param redisConnectionFactory RedisConnectionFactory
