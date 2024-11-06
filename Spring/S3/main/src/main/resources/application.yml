@@ -12,9 +12,9 @@ cloud:
 
 aws:
   s3:
-   url: https://entry-mini.s3.ap-northeast-2.amazonaws.com
+   url: https://entry-mini.s3.ap-northeast-2.amazonaws.com/
    bucket: entry-mini
-   blog-folder: blogFolder
+   blog-folder: blogFolder/
 
 
 jackson:
@@ -28,8 +28,8 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
 
     url: jdbc:mysql://localhost:3306/s3
-    username: root
-    password: 1234
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
   #
   servlet:
     multipart:
