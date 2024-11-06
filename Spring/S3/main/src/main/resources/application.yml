@@ -1,8 +1,8 @@
 cloud:
   aws:
     credentials:
-      access-key: ${aws_access_key}
-      secret-key: ${aws_secret_key}
+      access-key: ${AWS_ACCESS_KEY}
+      secret-key: ${AWS_SECRET_KEY}
     s3:
       bucket: entry-mini
     stack:
@@ -12,7 +12,7 @@ cloud:
 
 aws:
   s3:
-   url: https://entry-mini.s3.ap-northeast-2.amazonaws.com
+   url: https://entry-mini.s3.ap-northeast-2.amazonaws.com/
    bucket: entry-mini
    blog-folder: blogFolder
 
