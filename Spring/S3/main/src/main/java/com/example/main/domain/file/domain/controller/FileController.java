@@ -4,6 +4,7 @@ import com.example.main.domain.file.domain.dto.FileResponse;
 import com.example.main.domain.file.domain.type.ImageType;
 import com.example.main.domain.file.service.ImageService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -16,9 +17,15 @@ public class FileController{
     private final ImageService imageService;
 
     @PostMapping("/image")
-    FileResponse uploadImage(@RequestPart("file") MultipartFile multipartFile, @RequestParam("type") ImageType imagetype){
-        String path = imageService.saveImage(multipartFile, imagetype);
-        return new FileResponse(imageService.getFileBaseUrl() + path, multipartFile.getOriginalFilename());
+    @ResponseStatus(HttpStatus.CREATED)
+    FileResponse uploadImage(@RequestPart("file") MultipartFile filePart, @RequestParam("type") ImageType imageType) {
+        String path = imageService.saveImage(filePart, imageType);
+        return new FileResponse(imageService.getFileBaseUrl() + path, filePart.getOriginalFilename());
+    }
+    @DeleteMapping
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    void deleteImage(@RequestParam String url) {
+        imageService.deleteImage(url);
     }
 
 }
