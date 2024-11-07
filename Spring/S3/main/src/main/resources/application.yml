@@ -4,7 +4,7 @@ cloud:
       access-key: ${AWS_ACCESS_KEY_ID}
       secret-key: ${AWS_SECRET_ACCESS_KEY}
     s3:
-      bucket: entry-mini
+      bucket: ${AWS_BUCKET}
     stack:
       auto: false
     region:
@@ -13,8 +13,8 @@ cloud:
 aws:
   s3:
    url: https://entry-mini.s3.ap-northeast-2.amazonaws.com/
-   bucket: entry-mini
-   blog-folder: blogFolder
+   bucket: ${AWS_BUCKET}
+   blog-folder: ${BLOG_FOLDER}
 
 
 jackson:
