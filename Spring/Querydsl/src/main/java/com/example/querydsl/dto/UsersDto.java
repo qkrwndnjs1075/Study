@@ -1,10 +1,9 @@
-package com.example.querydsl.dto;
-
 import com.querydsl.core.annotations.QueryProjection;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Getter
+@Getter @Setter
 @NoArgsConstructor
 public class UsersDto {
 
@@ -13,7 +12,7 @@ public class UsersDto {
     private String userName;
 
     @QueryProjection
-    public UsersDto(Long userNo, String userId, String userName){
+    public UsersDto(Long userNo, String userId, String userName) {
         this.userNo = userNo;
         this.userId = userId;
         this.userName = userName;
