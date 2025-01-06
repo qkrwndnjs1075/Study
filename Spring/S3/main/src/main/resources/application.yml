@@ -15,6 +15,7 @@ aws:
    url: https://entry-mini.s3.ap-northeast-2.amazonaws.com/
    bucket: ${AWS_BUCKET}
    blog-folder: ${BLOG_FOLDER}
+   default-folder: defaultProfileImageFolder
 
 
 jackson:
