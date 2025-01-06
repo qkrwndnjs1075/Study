@@ -67,6 +67,7 @@ public class ImageService {
 
         switch (imageType) {
             case BLOG_IMAGE -> folder = awsS3Properties.blogFolder();
+            case DEFAULT_PROFILE -> folder = awsS3Properties.defaultFolder();
             default -> throw new IllegalStateException("Unexpected value: " + imageType);
         }
         return folder + "/" + UUID.randomUUID();
